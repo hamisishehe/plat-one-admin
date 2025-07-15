@@ -1,0 +1,35 @@
+<div class="mt-16">
+  <table id="search-table">
+    <thead>
+      <tr>
+        <th>
+          <span class="flex items-center"> ADDRESS </span>
+        </th>
+
+        <th>
+          <span class="flex items-center"> USERNAME </span>
+        </th>
+        <th>
+          <span class="flex items-center"> PHONE NUMBER </span>
+        </th>
+        <th>
+          <span class="flex items-center"> AMOUNT </span>
+        </th>
+
+        <th>
+          <span class="flex items-center"> DATE </span>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let items of depositDetails">
+        <td>{{ items.username }}</td>
+        <td>{{ items.address }}</td>
+        <td>{{ items.phoneNumber }}</td>
+        <td>$ {{ items.amount }}</td>
+        <td>{{ items.createdAt }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

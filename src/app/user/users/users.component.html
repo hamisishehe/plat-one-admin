@@ -1,0 +1,57 @@
+<div class="mt-16">
+  <table id="default-table">
+    <thead>
+      <tr>
+        <th>
+          <span class="flex items-center"> Username </span>
+        </th>
+        <th>
+          <span class="flex items-center"> Email </span>
+        </th>
+        <th>
+          <span class="flex items-center"> Phone Numbers </span>
+        </th>
+
+        <th>
+          <span class="flex items-center"> Status </span>
+        </th>
+
+        <th>
+          <span class="flex items-center"> View More </span>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let users of allUsers">
+        <td>{{ users.username }}</td>
+        <td>{{ users.email }}</td>
+        <td>{{ users.phoneNumber }}</td>
+
+        <td>
+          <span
+            *ngIf="users.locked == '1'"
+            class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300"
+          >
+            Locked
+          </span>
+
+          <span
+            *ngIf="users.locked == '0'"
+            class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+          >
+            Active
+          </span>
+        </td>
+        <td>
+          <a
+            href="/user-more/{{ users.id }}"
+            class="w-36 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            More
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

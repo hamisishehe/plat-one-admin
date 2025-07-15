@@ -1,0 +1,118 @@
+<div class="p-4 md:p-5">
+  <div class="mt-12">
+    <form class="space-y-4" (submit)="updateProfile()">
+      <div class="">
+        <h1 class="p-5 text-center text-4xl text-blue-800">
+          Profile Settings
+          <br />
+        </h1>
+      </div>
+
+      <div
+        class="flex flex-col flex-3 gap-2 sm:flex-row md:flex-row lg:flex-row"
+      >
+        <div>
+          <label
+            for="first Name"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >First Name</label
+          >
+          <input
+            [(ngModel)]="first_name"
+            type="text"
+            name="first_name"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+            required
+          />
+        </div>
+
+        <div>
+          <label
+            for="first Name"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Second Name</label
+          >
+          <input
+            [(ngModel)]="second_name"
+            type="text"
+            name="second_name"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+            required
+          />
+        </div>
+
+        <div>
+          <label
+            for="last Name"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Last Name</label
+          >
+          <input
+            [(ngModel)]="last_name"
+            type="text"
+            name="last_name"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+            required
+          />
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col flex-3 gap-2 sm:flex-row md:flex-row lg:flex-row"
+      >
+        <div>
+          <label
+            for=""
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >UserName</label
+          >
+          <input
+            [(ngModel)]="username"
+            type="text"
+            name="username"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+            disabled=""
+            required
+          />
+        </div>
+
+        <div>
+          <label
+            for="Email"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Email</label
+          >
+          <input
+            [(ngModel)]="email"
+            type="email"
+            name="email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+            disabled=""
+            required
+          />
+        </div>
+
+        <div>
+          <label
+            for=""
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Phone Number</label
+          >
+          <input
+            [(ngModel)]="phonenumber"
+            type="text"
+            name="address"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+            required
+          />
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="w-min text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Update
+      </button>
+    </form>
+  </div>
+</div>

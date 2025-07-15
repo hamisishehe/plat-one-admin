@@ -1,0 +1,57 @@
+<div class="mt-16">
+  <div *ngIf="loading" class="loading-indicator">
+    Loading...
+    <!-- You can replace this with a spinner or any loading animation -->
+  </div>
+
+  <div *ngIf="plansDetails != null">
+    <table id="search-table">
+      <thead>
+        <tr>
+          <th>
+            <span class="flex items-center"> # </span>
+          </th>
+
+          <th>
+            <span class="flex items-center"> USERNAME </span>
+          </th>
+
+          <th>
+            <span class="flex items-center"> AMOUNT </span>
+          </th>
+          <th>
+            <span class="flex items-center"> START DATE </span>
+          </th>
+          <th>
+            <span class="flex items-center"> FINISH DATE </span>
+          </th>
+          <th>
+            <span class="flex items-center"> PACKAGE </span>
+          </th>
+          <th>
+            <span class="flex items-center"> DELETE </span>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let items of plansDetails">
+          <td>{{ items.investment.id }}</td>
+          <td>{{ items.user.username }}</td>
+          <td>{{ items.investment.amount }}</td>
+          <td>{{ items.investment.startDate }}</td>
+          <td>{{ items.investment.maturityDate }}</td>
+          <td>{{ items.investment.investmentPackage }}</td>
+          <td>
+            <a
+              href="/delete-plans/{{ items.investment.id }}"
+              class="w-36 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Delete
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

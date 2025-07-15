@@ -1,0 +1,220 @@
+<div class="mt-16">
+  <div
+    class="flex flex-col w-full p-8 bg-blue-800 shadow-sm justify-items-center b rounded-2xl"
+  >
+    <div class="flex flex-row justify-around">
+      <div>
+        <h1 class="text-center text-white text-md">Total users</h1>
+        <h6 class="text-4xl font-bold">
+          <div class="flex flex-row justify-center gap-1">
+            <h6 class="pt-2 text-xl font-bold text-center text-white">
+              {{ allUsers?.length }}
+            </h6>
+            <h6 class="pt-2 text-lg font-bold text-center text-white"></h6>
+          </div>
+        </h6>
+      </div>
+
+      <div>
+        <h1 class="text-center text-white text-md">Total Deposit Balance</h1>
+        <h6 class="text-4xl font-bold">
+          <div class="flex flex-row justify-center gap-1">
+            <h6 class="pt-2 text-xl font-bold text-center text-white">
+              $ {{ totaldeposit.toFixed(2) }}
+            </h6>
+            <h6 class="pt-2 text-lg font-bold text-center text-white"></h6>
+          </div>
+        </h6>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="flex flex-col w-full p-8 mt-10 bg-blue-800 shadow-sm justify-items-center b rounded-2xl"
+  >
+    <div class="flex flex-row justify-around">
+      <div>
+        <h1 class="text-center text-white text-md">Total Stake</h1>
+        <h6 class="text-4xl font-bold">
+          <div class="flex flex-row justify-center gap-1">
+            <h6 class="pt-2 text-xl font-bold text-center text-white">
+              {{ allplans?.length }}
+            </h6>
+            <h6 class="pt-2 text-lg font-bold text-center text-white"></h6>
+          </div>
+        </h6>
+      </div>
+
+      <div>
+        <h1 class="text-center text-white text-md">Total Stake Amount</h1>
+        <h6 class="text-4xl font-bold">
+          <div class="flex flex-row justify-center gap-1">
+            <h6 class="pt-2 text-xl font-bold text-center text-white">
+              ENA {{ totalplans }}
+            </h6>
+            <h6 class="pt-2 text-lg font-bold text-center text-white"></h6>
+          </div>
+        </h6>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="flex flex-col w-full p-8 mt-10 bg-blue-800 shadow-sm justify-items-center b rounded-2xl"
+  >
+    <div class="flex flex-row justify-around">
+      <div>
+        <h1 class="text-center text-white text-md">Total Withdraw</h1>
+        <h6 class="text-4xl font-bold">
+          <div class="flex flex-row justify-center gap-1">
+            <h6 class="pt-2 text-xl font-bold text-center text-white">
+              {{ withdrawDetails?.length }}
+            </h6>
+            <h6 class="pt-2 text-lg font-bold text-center text-white"></h6>
+          </div>
+        </h6>
+      </div>
+
+      <div>
+        <h1 class="text-center text-white text-md">Total Ena Withdraw Token</h1>
+        <h6 class="text-4xl font-bold">
+          <div class="flex flex-row justify-center gap-1">
+            <h6 class="pt-2 text-xl font-bold text-center text-white">
+              {{ totalenawithdraw.toFixed(2) }} <br />
+              $ {{ (totalenawithdraw * 0.0001).toFixed(2) }}
+            </h6>
+            <h6 class="pt-2 text-lg font-bold text-center text-white"></h6>
+          </div>
+        </h6>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="flex flex-col w-full p-8 mt-10 bg-blue-800 shadow-sm justify-items-center b rounded-2xl"
+  >
+    <div class="flex flex-row justify-around">
+      <div>
+        <h1 class="text-center text-white text-md">Total Referrals Withdraw</h1>
+        <h6 class="text-4xl font-bold">
+          <div class="flex flex-row justify-center gap-1">
+            <h6 class="pt-2 text-xl font-bold text-center text-white">
+              {{ refwithdrawDetails?.length }}
+            </h6>
+            <h6 class="pt-2 text-lg font-bold text-center text-white"></h6>
+          </div>
+        </h6>
+      </div>
+
+      <div>
+        <h1 class="text-center text-white text-md">Total Referrals Withdraw</h1>
+        <h6 class="text-4xl font-bold">
+          <div class="flex flex-row justify-center gap-1">
+            <h6 class="pt-2 text-xl font-bold text-center text-white">
+              $ {{ totalreferralswithdraw.toFixed(2) }} <br />
+            </h6>
+            <h6 class="pt-2 text-lg font-bold text-center text-white"></h6>
+          </div>
+        </h6>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="flex flex-col w-full p-8 mt-10 bg-blue-800 shadow-sm justify-items-center b rounded-2xl"
+  >
+    <div class="flex flex-row justify-around">
+      <div>
+        <h1 class="text-center text-white text-md">Total Pending deposits</h1>
+        <h6 class="text-4xl font-bold">
+          <div class="flex flex-row justify-center gap-1">
+            <h6 class="pt-2 text-xl font-bold text-center text-white">
+              {{ userdeposits?.length }}
+            </h6>
+            <h6 class="pt-2 text-lg font-bold text-center text-white"></h6>
+          </div>
+        </h6>
+      </div>
+
+      <div>
+        <h1 class="text-center text-white text-md">Total Pending Amount</h1>
+        <h6 class="text-4xl font-bold">
+          <div class="flex flex-row justify-center gap-1">
+            <h6 class="pt-2 text-xl font-bold text-center text-white">
+              $ {{ totalpendingdeposit.toFixed(2) }} <br />
+            </h6>
+            <h6 class="pt-2 text-lg font-bold text-center text-white"></h6>
+          </div>
+        </h6>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="flex flex-col w-full p-8 mt-10 bg-blue-800 shadow-sm justify-items-center b rounded-2xl"
+  >
+    <div class="flex flex-row justify-around">
+      <div>
+        <h1 class="text-center text-white text-md">
+          Total Pending Referrals Withdraw
+        </h1>
+        <h6 class="text-4xl font-bold">
+          <div class="flex flex-row justify-center gap-1">
+            <h6 class="pt-2 text-xl font-bold text-center text-white">
+              {{ pendingrefwithdrawDetails?.length }}
+            </h6>
+            <h6 class="pt-2 text-lg font-bold text-center text-white"></h6>
+          </div>
+        </h6>
+      </div>
+
+      <div>
+        <h1 class="text-center text-white text-md">
+          Total Pending Referrals Withdraw Amount
+        </h1>
+        <h6 class="text-4xl font-bold">
+          <div class="flex flex-row justify-center gap-1">
+            <h6 class="pt-2 text-xl font-bold text-center text-white">
+              $ {{ totalpendingreferralswithdraw.toFixed(2) }} <br />
+            </h6>
+            <h6 class="pt-2 text-lg font-bold text-center text-white"></h6>
+          </div>
+        </h6>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="flex flex-col w-full p-8 mt-10 bg-blue-800 shadow-sm justify-items-center b rounded-2xl"
+  >
+    <div class="flex flex-row justify-around">
+      <div>
+        <h1 class="text-center text-white text-md">
+          Total Pending Plans Withdraw
+        </h1>
+        <h6 class="text-4xl font-bold">
+          <div class="flex flex-row justify-center gap-1">
+            <h6 class="pt-2 text-xl font-bold text-center text-white">
+              {{ pendingwithdrawDetails?.length }}
+            </h6>
+            <h6 class="pt-2 text-lg font-bold text-center text-white"></h6>
+          </div>
+        </h6>
+      </div>
+
+      <div>
+        <h1 class="text-center text-white text-md">
+          Total Plans Withdraw Amount
+        </h1>
+        <h6 class="text-4xl font-bold">
+          <div class="flex flex-row justify-center gap-1">
+            <h6 class="pt-2 text-xl font-bold text-center text-white">
+              $ {{ totalpendingwithdraw.toFixed(2) }} <br />
+            </h6>
+            <h6 class="pt-2 text-lg font-bold text-center text-white"></h6>
+          </div>
+        </h6>
+      </div>
+    </div>
+  </div>
+</div>

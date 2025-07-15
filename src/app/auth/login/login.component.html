@@ -1,0 +1,144 @@
+<div
+  class="grid h-screen grid-flow-col grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3"
+>
+  <div class="col-span-1">
+    <div
+      class="flex justify-center"
+      style="
+        height: 25%;
+        background-image: url('images/enalogonew.png');
+        background-size: cover;
+        background-position: center;
+      "
+    ></div>
+    <div class="flex justify-center">
+      <h1 class="text-4xl text-blue-900">Sign In</h1>
+    </div>
+
+    <div class="flex justify-center mt-1">
+      <h2 class="text-center text-wrap">
+        Please Insert your login credentials
+        <br />
+        to access your data.
+      </h2>
+    </div>
+
+    <div class="m-14">
+      <div *ngIf="message">
+        <div
+          class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+          role="alert"
+        >
+          <span class="font-medium"></span> {{ message }}
+        </div>
+      </div>
+
+      <form class="max-w-sm mx-auto" (ngSubmit)="login()" #loginForm="ngForm">
+        <div class="mb-5">
+          <label
+            for="email"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Email
+          </label>
+          <input
+            [(ngModel)]="email"
+            name="email"
+            id="email"
+            type="email"
+            #emailField="ngModel"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+            required
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            placeholder="name@example.com"
+          />
+          <!-- Email validation message -->
+          <div
+            *ngIf="emailField.invalid && emailField.touched"
+            class="text-sm text-red-500"
+          >
+            <small *ngIf="emailField.errors?.['required']"
+              >Email is required.</small
+            >
+            <small *ngIf="emailField.errors?.['pattern']"
+              >Please enter a valid email.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <label
+            for="password"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Password
+          </label>
+          <input
+            [(ngModel)]="password"
+            name="password"
+            type="password"
+            id="password"
+            #passwordField="ngModel"
+            required
+            minlength="4"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            placeholder="********"
+          />
+          <!-- Password validation message -->
+          <div
+            *ngIf="passwordField.invalid && passwordField.touched"
+            class="text-sm text-red-500"
+          >
+            <small *ngIf="passwordField.errors?.['required']"
+              >Password is required.</small
+            >
+            <small *ngIf="passwordField.errors?.['minlength']"
+              >Password must be at least 4 characters long.</small
+            >
+          </div>
+        </div>
+
+        <button
+          [disabled]="loading || loginForm.invalid"
+          type="submit"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full sm:w-full md:w-full lg:w-full"
+        >
+          <span *ngIf="loading">
+            <svg
+              class="inline w-4 h-4 mr-2 text-white animate-spin"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+              ></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8v8z"
+              ></path>
+            </svg>
+            Loading...
+          </span>
+          <span *ngIf="!loading">Sign In</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div
+    class="hidden col-span-2 bg-blue-600 md:block"
+    style="
+      height: 100%;
+      background-image: url('images/account.svg');
+      background-size: cover;
+      background-position: center;
+    "
+  ></div>
+</div>

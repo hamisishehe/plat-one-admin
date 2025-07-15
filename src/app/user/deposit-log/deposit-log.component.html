@@ -1,0 +1,51 @@
+<div class="mt-16">
+  <table id="search-table">
+    <thead>
+      <tr>
+        <th>
+          <span class="flex items-center"> USERNAME </span>
+        </th>
+        <th>
+          <span class="flex items-center"> ADDRESS </span>
+        </th>
+        <th>
+          <span class="flex items-center"> PHONE NUMBER </span>
+        </th>
+        <th>
+          <span class="flex items-center"> AMOUNT </span>
+        </th>
+
+        <th>
+          <span class="flex items-center"> DATE </span>
+        </th>
+
+        <th>
+          <span class="flex items-center"> STATUS </span>
+        </th>
+
+        <th>
+          <span class="flex items-center"> CONFIRM </span>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let items of depositDetails">
+        <td>{{ items.username }}</td>
+        <td>{{ items.address }}</td>
+        <td>{{ items.phoneNumber }}</td>
+        <td>$ {{ items.amount }}</td>
+        <td>{{ items.createdAt }}</td>
+        <td>{{ items.status }}</td>
+        <td>
+          <a
+            href="/change-deposit-status/{{ items.id }}"
+            class="w-36 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Confirm
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

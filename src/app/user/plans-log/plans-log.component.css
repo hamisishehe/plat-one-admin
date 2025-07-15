@@ -1,0 +1,24 @@
+/* plans-log.component.css */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader div {
+  border-width: 4px;
+  border-style: solid;
+  border-color: #3b82f6; /* Blue-500 */
+  border-top-color: transparent; /* Make the top transparent */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
