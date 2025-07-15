@@ -1,0 +1,46 @@
+<div class="mt-16">
+  <div *ngIf="loading" class="loading-indicator">
+    Loading...
+    <!-- You can replace this with a spinner or any loading animation -->
+  </div>
+
+  <div *ngIf="task_products != null">
+    <table id="search-table">
+      <thead>
+        <tr>
+          <th>
+            <span class="flex items-center"> # </span>
+          </th>
+
+
+
+          <th>
+            <span class="flex items-center"> STATUS </span>
+          </th>
+          <th>
+            <span class="flex items-center"> START DATE </span>
+          </th>
+          <th>
+            <span class="flex items-center"> FINISH DATE </span>
+          </th>
+          <th>
+            <span class="flex items-center"> AMOUNT </span>
+          </th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let items of task_products">
+          <td>{{ items.id }}</td>
+          <td>{{ items.status }}</td>
+          <td>{{ items.finish_time }}</td>
+          <td>{{ items.start_time }}</td>
+          <td>{{ items.total_amount }}</td>
+
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -26,6 +26,7 @@ import { VerifyWithdrawComponent } from './user/verify-withdraw/verify-withdraw.
 import { RefVerifyWithdrawComponent } from './user/ref-verify-withdraw/ref-verify-withdraw.component';
 import { DeletePlanComponent } from './user/delete-plan/delete-plan.component';
 import { ChangeDepositStatusComponent } from './user/change-deposit-status/change-deposit-status.component';
+import { ActivitiesLogComponent } from './user/activities-log/activities-log.component';
 
 export const routes: Routes = [
   // Public routes
@@ -48,8 +49,8 @@ export const routes: Routes = [
         canActivate: [authGuardGuard],
       },
       {
-        path: 'plans-log',
-        component: PlansLogComponent,
+        path: 'activity-log',
+        component: ActivitiesLogComponent,
         canActivate: [authGuardGuard],
       },
 

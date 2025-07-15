@@ -12,6 +12,7 @@ import { DataTable } from 'simple-datatables';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../../../environments/environment';
 import { WithdrawDetails } from '../withdraw-log/withdraw-log.component';
+import { TaskProduct } from '../activities-log/activities-log.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -34,7 +35,7 @@ export class DashboardComponent implements OnInit {
   adminbalance: Admindeposits[] | null = null;
   userdeposits: UserDeposits[] | null = null;
   allUsers: Users[] | null = [];
-  allplans: PlansDetails[] | null = null;
+  allactivities: TaskProduct[] | null = null;
   withdrawDetails: WithdrawDetails[] | null = null;
 
   payedwithdrawDetails: WithdrawDetails[] | null = null;
@@ -47,7 +48,7 @@ export class DashboardComponent implements OnInit {
   totalpendingdeposit: number = 0;
   totalpendingreferralswithdraw: number = 0;
   totalpendingwithdraw: number = 0;
-  totalplans: number = 0;
+  totalactivities: number = 0;
   totalreferralswithdraw: number = 0;
   totalenawithdraw: number = 0;
 
@@ -125,17 +126,15 @@ export class DashboardComponent implements OnInit {
 
   planslog(): void {
     this.http
-      .get<PlansDetails[]>(
-        `${environment.baseUrl}/investments/users-investments`
-      ) // Use baseUrl here
+    .get<TaskProduct[]>(`${environment.baseUrl}/get-tasks`)
       .subscribe(
         (data) => {
           console.log('====================================');
           console.log(data);
           console.log('====================================');
-          this.allplans = data;
-          this.totalplans = this.allplans?.reduce(
-            (sum, item) => sum + item.amount,
+          this.allactivities = data;
+          this.totalactivities = this.allactivities?.reduce(
+            (sum, item) => sum + item.total_amount,
             0
           );
         },
