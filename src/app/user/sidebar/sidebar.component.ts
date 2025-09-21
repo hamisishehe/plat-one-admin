@@ -22,7 +22,7 @@ import { environment } from '../../../environments/environment';
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent implements OnInit {
-  apptitle: string = 'NovaNest';
+  apptitle: string = 'finix';
 
   userData: UserDetails | null = null;
 

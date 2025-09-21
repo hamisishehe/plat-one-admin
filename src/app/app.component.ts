@@ -10,7 +10,7 @@ import { initFlowbite } from 'flowbite';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  title = 'enatech-admin';
+  title = 'finix-admin';
 
   ngOnInit(): void {
     initFlowbite();
