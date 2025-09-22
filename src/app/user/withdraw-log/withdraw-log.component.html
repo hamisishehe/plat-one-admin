@@ -14,9 +14,7 @@
         <th>
           <span class="flex items-center"> AMOUNT </span>
         </th>
-        <th>
-          <span class="flex items-center"> ADDRESS </span>
-        </th>
+
         <th>
           <span class="flex items-center"> PHONENUMBER </span>
         </th>
@@ -37,8 +35,7 @@
         <td>{{ items.id }}</td>
         <td>{{ items.username }}</td>
         <td>{{ items.transactionId }}</td>
-        <td>$ {{ items.amount * 0.0001 }}</td>
-        <td>{{ items.wallet ?? "Not Found" }}</td>
+        <td> {{ items.amount }}</td>
         <td>{{ items.phoneNumber ?? "Not Found" }}</td>
         <td>
           <span
