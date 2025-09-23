@@ -30,6 +30,7 @@ import { ActivitiesLogComponent } from './user/activities-log/activities-log.com
 import { PendingDepositsComponent } from './user/pending-deposits/pending-deposits.component';
 import { PendingRefWithdrawComponent } from './user/pending-ref-withdraw/pending-ref-withdraw.component';
 import { PendingAssetWithdrawComponent } from './user/pending-asset-withdraw/pending-asset-withdraw.component';
+import { RejectDepositComponent } from './user/reject-deposit/reject-deposit.component';
 
 export const routes: Routes = [
   // Public routes
@@ -133,6 +134,11 @@ export const routes: Routes = [
       {
         path: 'change-deposit-status/:id',
         component: ChangeDepositStatusComponent,
+        canActivate: [authGuardGuard],
+      },
+       {
+        path: 'reject-deposit/:id',
+        component: RejectDepositComponent,
         canActivate: [authGuardGuard],
       },
       { path: '', component: SidebarComponent, canActivate: [authGuardGuard] }, // Sidebar can be loaded as part of the layout
