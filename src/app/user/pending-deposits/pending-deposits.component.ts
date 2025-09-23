@@ -26,12 +26,12 @@ depositDetails: DepositDetails[] | null = null;
     this.getProfile();
   }
 
-  // Get deposit data based on user ID
-  getData(userId: number): void {
+  getData() {
     this.http
       .get<DepositDetails[]>(`${environment.baseUrl}/deposits/users-pending-deposits`) // Use baseUrl here
       .subscribe(
         (data) => {
+
           this.depositDetails = data;
           console.log('====================================');
           console.log(data);
@@ -44,6 +44,8 @@ depositDetails: DepositDetails[] | null = null;
         }
       );
   }
+
+
 
   getProfile(): void {
     const token = localStorage.getItem('token');
@@ -60,7 +62,7 @@ depositDetails: DepositDetails[] | null = null;
             this.userData = data;
             this.userid = this.userData.id;
 
-            this.getData(this.userid);
+            this.getData();
           },
           (error) => {
             console.error('Error fetching user profile:', error);
