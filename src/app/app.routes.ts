@@ -27,6 +27,9 @@ import { RefVerifyWithdrawComponent } from './user/ref-verify-withdraw/ref-verif
 import { DeletePlanComponent } from './user/delete-plan/delete-plan.component';
 import { ChangeDepositStatusComponent } from './user/change-deposit-status/change-deposit-status.component';
 import { ActivitiesLogComponent } from './user/activities-log/activities-log.component';
+import { PendingDepositsComponent } from './user/pending-deposits/pending-deposits.component';
+import { PendingRefWithdrawComponent } from './user/pending-ref-withdraw/pending-ref-withdraw.component';
+import { PendingAssetWithdrawComponent } from './user/pending-asset-withdraw/pending-asset-withdraw.component';
 
 export const routes: Routes = [
   // Public routes
@@ -59,6 +62,12 @@ export const routes: Routes = [
         component: DepositLogComponent,
         canActivate: [authGuardGuard],
       },
+
+      {
+        path: 'pending-log',
+        component: PendingDepositsComponent,
+        canActivate: [authGuardGuard],
+      },
       {
         path: 'admin-deposits',
         component: AdminDepositsComponent,
@@ -89,12 +98,23 @@ export const routes: Routes = [
         component: WithdrawLogComponent,
         canActivate: [authGuardGuard],
       },
-
+       {
+        path: 'pending-withdraw',
+        component: PendingAssetWithdrawComponent,
+        canActivate: [authGuardGuard],
+      },
       {
         path: 'referrals-withdraw',
         component: ReferralsWithdrawComponent,
         canActivate: [authGuardGuard],
       },
+
+       {
+        path: 'pending-ref-withdraw',
+        component: PendingRefWithdrawComponent,
+        canActivate: [authGuardGuard],
+      },
+
       {
         path: 'verify-withdraw/:id',
         component: VerifyWithdrawComponent,
