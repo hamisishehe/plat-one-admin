@@ -24,7 +24,6 @@ depositDetails: DepositDetails[] | null = null;
 
   ngOnInit(): void {
     this.getProfile();
-    this.getData(this.userid);
   }
 
   // Get deposit data based on user ID
