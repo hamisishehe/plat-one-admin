@@ -29,41 +29,36 @@
         </th>
       </tr>
     </thead>
-
-    <tbody>
-      <tr *ngFor="let items of allwithdrawDetails">
-        <td>{{ items.id }}</td>
-        <td>{{ items.username }}</td>
-        <td>{{ items.transactionId }}</td>
-        <td> {{ items.amount }}</td>
-        <td>{{ items.phoneNumber ?? "Not Found" }}</td>
-        <td>
-          <span
-            *ngIf="items.status === 'PENDING'"
-            class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300"
-          >
-            <span class="w-2 h-2 bg-red-500 rounded-full me-1"></span>
-            Pending
-          </span>
-
-          <span
-            *ngIf="items.status === 'PAYED'"
-            class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
-          >
-            <span class="w-2 h-2 bg-green-500 rounded-full me-1"></span>
-            Confirmed
-          </span>
-        </td>
-        <td>{{ items.withdrawalDate }}</td>
-        <td>
-          <a
-            href="verify-withdraw/{{ items.id }}"
-            class="w-36 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Verify
-          </a>
-        </td>
-      </tr>
+ <tbody>
+      <ng-container *ngFor="let items of allwithdrawDetails">
+        <tr *ngIf="items.status === 'PENDING'">
+          <td>{{ items.id }}</td>
+          <td>{{ items.username }}</td>
+          <td>{{ items.transactionId }}</td>
+          <td>{{ items.amount }}</td>
+          <td>{{ items.phoneNumber ?? 'Not Found' }}</td>
+          <td>
+            <span
+              class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5
+                     rounded-full dark:bg-red-900 dark:text-red-300"
+            >
+              <span class="w-2 h-2 bg-red-500 rounded-full me-1"></span>
+              Pending
+            </span>
+          </td>
+          <td>{{ items.withdrawalDate }}</td>
+          <td>
+            <a
+              href="verify-withdraw/{{ items.id }}"
+              class="w-36 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none
+                     focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center
+                     dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Verify
+            </a>
+          </td>
+        </tr>
+      </ng-container>
     </tbody>
   </table>
 </div>
