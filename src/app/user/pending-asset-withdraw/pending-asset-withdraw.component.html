@@ -9,9 +9,6 @@
           <span class="flex items-center"> USERNAME </span>
         </th>
         <th>
-          <span class="flex items-center"> FULLNAME </span>
-        </th>
-        <th>
           <span class="flex items-center"> AMOUNT </span>
         </th>
 
@@ -34,7 +31,6 @@
         <tr *ngIf="items.status === 'PENDING'">
           <td>{{ items.id }}</td>
           <td>{{ items.username }}</td>
-          <td>{{ items.transactionId }}</td>
           <td>{{ items.amount }}</td>
            <td>{{ items.wallet ?? "Not Found" }}</td>
           <td>
