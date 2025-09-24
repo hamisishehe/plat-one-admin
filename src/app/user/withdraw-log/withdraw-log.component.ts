@@ -122,6 +122,7 @@ export interface WithdrawDetails {
   amount: number;
   status: string;
   withdrawalDate: string;
+  phone_number: string;
   phoneNumber: string;
   address: string;
 }

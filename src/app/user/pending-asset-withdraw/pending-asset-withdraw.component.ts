@@ -119,5 +119,6 @@ export interface WithdrawDetails {
   status: string;
   withdrawalDate: string;
   phoneNumber: string;
+  phone_number: string;
   address: string;
 }
